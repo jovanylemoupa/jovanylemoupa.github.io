@@ -14,7 +14,7 @@ header {
   @include flex-center;
   width: 100%;
   position: fixed;
-  height: 80px;
+  height: 90px;
   z-index: 999;
   @include transition-smooth;
 
@@ -280,7 +280,7 @@ header {
 // Responsive Tablet
 @media all and (max-width: 1024px) {
   header {
-    height: 70px;
+    height: 75px;
 
     .logo {
       .logo-circle { width: 38px; height: 38px; font-size: 14px; }
@@ -301,7 +301,7 @@ header {
 // Responsive Mobile
 @media all and (max-width: 850px) {
   header {
-    height: 65px;
+    height: 70px;
 
     .content {
       position: relative;
@@ -320,6 +320,7 @@ header {
       .lang-toggle {
         display: flex;
         margin-left: 8px;
+        margin-right: 12px; // espace entre lang-toggle et burger
         padding: 4px 9px;
         font-size: 0.78em;
         .lang-flag { display: none; } // Masquer le drapeau, garder juste "EN"/"FR"
@@ -331,9 +332,9 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        top: 65px;
+        top: 70px;
         width: 100vw;
-        height: calc(100vh - 65px);
+        height: calc(100vh - 70px);
         left: -15px;
         margin: 0;
         padding: 30px 15px;
@@ -459,7 +460,7 @@ header {
 // Tres petits ecrans
 @media all and (max-width: 480px) {
   header {
-    height: 60px;
+    height: 65px;
 
     .logo {
       .logo-circle { width: 32px; height: 32px; font-size: 12px; }
@@ -468,8 +469,8 @@ header {
 
     .header-right {
       nav {
-        top: 60px;
-        height: calc(100vh - 60px);
+        top: 65px;
+        height: calc(100vh - 65px);
         padding: 20px 10px;
 
         ul li a {
@@ -497,8 +498,4 @@ header {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .navbar-background-on-scroll {
-    background-color: rgba(0, 1, 31, 0.95);
-  }
-}
+// Note : pas de dark mode — le portfolio utilise des couleurs de marque fixes.

@@ -181,36 +181,36 @@ export const portfolioConfig = {
   // Témoignages
   testimonials: [
     {
-      name: 'Marie Dubois',
-      role: 'CEO, TechStartup',
+      name: 'Thibaud Benoist',
+      role: 'CTPO — Directeur développement & produit',
       content:
         'Jovany a transformé notre vision en une application web exceptionnelle. Son professionnalisme et son expertise technique sont remarquables. Un vrai talent !',
       rating: 5,
-      avatar: 'MD',
+      avatar: 'TB',
     },
     {
-      name: 'Jean Martin',
-      role: 'Directeur Marketing, E-commerce Plus',
+      name: 'Hugo Kuo',
+      role: 'Co-founder & COO @ noet-ia | DeepTech AI × Industry',
       content:
         'Un développeur talentueux qui comprend parfaitement les besoins business. Notre site e-commerce a vu ses ventes augmenter de 40% après la refonte.',
       rating: 5,
-      avatar: 'JM',
+      avatar: 'HK',
     },
     {
-      name: 'Sophie Laurent',
-      role: 'Responsable Projet, Digital Agency',
+      name: 'David Chhang',
+      role: 'Développeur web & mobile freelance',
       content:
         'Jovany est un développeur passionné et rigoureux. Sa capacité à apprendre rapidement et à s\'adapter aux nouvelles technologies est impressionnante.',
       rating: 5,
-      avatar: 'SL',
+      avatar: 'DC',
     },
     {
-      name: 'Thomas Nguyen',
-      role: 'Lead Developer, FinTech Solutions',
+      name: 'Olivier Daniel-Thomas',
+      role: 'CEO & Founder @ noet-ia',
       content:
         'Excellent travail d\'équipe, code propre et bien documenté. Jovany apporte toujours des solutions innovantes aux problèmes techniques complexes.',
       rating: 5,
-      avatar: 'TN',
+      avatar: 'OD',
     },
   ],
 
@@ -233,6 +233,12 @@ export const portfolioConfig = {
       category: 'Certifications',
       image: 'img/Certifications/Principes_solid.png',
       description: 'Maîtrise des principes SOLID en développement logiciel',
+    },
+    {
+      title: 'LangChain',
+      category: 'Certifications',
+      image: 'img/Certifications/Certif-langchain.png',
+      description: 'Certification LangChain — développement d\'applications IA avec LLMs',
     },
     {
       title: 'Recommandation LinkedIn',

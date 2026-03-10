@@ -229,7 +229,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       () => {
         const element = this.document.getElementById(targetAnchor);
         if (element && typeof window !== 'undefined') {
-          const headerHeight = this.isBannerClosed ? 80 : 136;
+          const headerHeight = this.isBannerClosed ? 90 : 146;
           const elementPosition = element.offsetTop - headerHeight;
 
           window.scrollTo({
@@ -267,7 +267,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private updateActiveSection(): void {
     if (!this.isBrowser || typeof window === 'undefined') return;
 
-    const headerOffset = this.isBannerClosed ? 80 : 136;
+    const headerOffset = this.isBannerClosed ? 90 : 146;
 
     for (let i = this.sections.length - 1; i >= 0; i--) {
       const section = this.document.getElementById(

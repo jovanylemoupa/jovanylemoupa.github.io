@@ -79,6 +79,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 import { ToastModule } from 'primeng/toast';
+import { CarouselModule } from 'primeng/carousel';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from '@angular/common';
@@ -90,6 +91,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [
     ToastModule,
+    CarouselModule,
     FontAwesomeModule,
     ProgressSpinnerModule,
     CommonModule,
@@ -261,6 +263,11 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   galleryCategories = ['Recommandations'];
   activeGalleryCategory = 'Recommandations';
   selectedGalleryItem: any = null;
+
+  carouselResponsiveOptions = [
+    { breakpoint: '1199px', numVisible: 1, numScroll: 1 },
+    { breakpoint: '575px',  numVisible: 1, numScroll: 1 },
+  ];
 
   screenWidth: any;
   isBurgerMenuClicked: boolean = false;

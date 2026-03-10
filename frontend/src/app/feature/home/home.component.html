@@ -531,26 +531,32 @@
       <h2 class="title animate-on-scroll">{{ 'CERTIF.TITLE' | translate }}</h2>
       <span class="summary animate-on-scroll">{{ 'CERTIF.SUBTITLE' | translate }}</span>
 
-      <div class="galerie-grid">
-        <div
-          class="galerie-item animate-on-scroll"
-          *ngFor="let item of certificationItems"
-          (click)="openGalleryItem(item)"
-        >
-          <div class="galerie-image">
-            <img [src]="item.image" [alt]="item.title" loading="lazy" />
-            <div class="galerie-overlay">
-              <fa-icon [icon]="faImages" class="overlay-icon"></fa-icon>
-              <span>{{ 'GALLERY.VIEW' | translate }}</span>
+      <p-carousel
+        [value]="certificationItems"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="true"
+        [autoplayInterval]="5000"
+        [responsiveOptions]="carouselResponsiveOptions"
+        styleClass="galerie-carousel"
+      >
+        <ng-template pTemplate="item" let-item>
+          <div class="galerie-item carousel-card" (click)="openGalleryItem(item)">
+            <div class="galerie-image">
+              <img [src]="item.image" [alt]="item.title" loading="lazy" />
+              <div class="galerie-overlay">
+                <fa-icon [icon]="faImages" class="overlay-icon"></fa-icon>
+                <span>{{ 'GALLERY.VIEW' | translate }}</span>
+              </div>
+            </div>
+            <div class="galerie-info">
+              <span class="galerie-category">{{ item.category }}</span>
+              <h3 class="galerie-title">{{ item.title }}</h3>
+              <p class="galerie-description">{{ item.description }}</p>
             </div>
           </div>
-          <div class="galerie-info">
-            <span class="galerie-category">{{ item.category }}</span>
-            <h3 class="galerie-title">{{ item.title }}</h3>
-            <p class="galerie-description">{{ item.description }}</p>
-          </div>
-        </div>
-      </div>
+        </ng-template>
+      </p-carousel>
     </div>
   </section>
 
@@ -562,41 +568,33 @@
         {{ "GALLERY.SUBTITLE" | translate }}
       </span>
 
-      <!-- Filtres : affiché uniquement si plusieurs catégories -->
-      <div class="galerie-filters animate-on-scroll" *ngIf="galleryCategories.length > 1">
-        <button
-          *ngFor="let cat of galleryCategories"
-          class="filter-btn"
-          [class.active]="activeGalleryCategory === cat"
-          (click)="filterGallery(cat)"
-        >
-          {{ cat }}
-        </button>
-      </div>
-
-      <!-- Grille -->
-      <div class="galerie-grid">
-        <div
-          class="galerie-item"
-          *ngFor="let item of filteredGallery"
-          (click)="openGalleryItem(item)"
-        >
-          <div class="galerie-image">
-            <img [src]="item.image" [alt]="item.title" />
-            <div class="galerie-overlay">
-              <fa-icon [icon]="faImages" class="overlay-icon"></fa-icon>
-              <span>{{ "GALLERY.VIEW" | translate }}</span>
+      <p-carousel
+        [value]="filteredGallery"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="true"
+        [autoplayInterval]="5000"
+        [responsiveOptions]="carouselResponsiveOptions"
+        styleClass="galerie-carousel"
+      >
+        <ng-template pTemplate="item" let-item>
+          <div class="galerie-item carousel-card" (click)="openGalleryItem(item)">
+            <div class="galerie-image">
+              <img [src]="item.image" [alt]="item.title" loading="lazy" />
+              <div class="galerie-overlay">
+                <fa-icon [icon]="faImages" class="overlay-icon"></fa-icon>
+                <span>{{ "GALLERY.VIEW" | translate }}</span>
+              </div>
+            </div>
+            <div class="galerie-info">
+              <span class="galerie-category">{{ item.category }}</span>
+              <h3 class="galerie-title">{{ item.title }}</h3>
+              <p class="galerie-description">{{ item.description }}</p>
             </div>
           </div>
-          <div class="galerie-info">
-            <span class="galerie-category">{{ item.category }}</span>
-            <h3 class="galerie-title">{{ item.title }}</h3>
-            <p class="galerie-description">{{ item.description }}</p>
-          </div>
-        </div>
-      </div>
+        </ng-template>
+      </p-carousel>
     </div>
-
   </section>
 
   <!-- Témoignages Section -->
