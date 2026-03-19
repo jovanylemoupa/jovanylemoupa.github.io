@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:portfolio-app": "node dist/portfolio-app/server/server.mjs",
-    "deploy": "ng build --base-href=/portfolio-jovany/ && ngh --dir=dist/portfolio-app"
+    "deploy": "ng build --configuration=production --base-href=/ && ngh --dir=dist/portfolio-app/browser --branch=gh-pages --no-silent"
   },
   "private": true,
   "dependencies": {
