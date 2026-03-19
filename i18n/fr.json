@@ -1,0 +1,123 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "ABOUT": "À Propos",
+    "SERVICES": "Services",
+    "PROJECTS": "Réalisations",
+    "CONTACT": "Contactez-moi",
+    "GALLERY": "Galerie",
+    "TESTIMONIALS": "Témoignages"
+  },
+  "MOBILE_NAV": {
+    "HOME": "Accueil",
+    "SEARCH": "Recherche",
+    "ABOUT": "À Propos",
+    "SERVICES": "Services",
+    "PROJECTS": "Projets",
+    "GALLERY": "Galerie",
+    "TESTIMONIALS": "Témoignages",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "GREETING": "Salut, je m'appelle",
+    "I_AM": "Je suis",
+    "DESCRIPTION": "Je conçois et développe des solutions web innovantes qui transforment vos idées en expériences digitales exceptionnelles. Actuellement à la recherche d'un CDI.",
+    "DOWNLOAD_CV": "Télécharger CV",
+    "DOWNLOAD_CV_ARIA": "Télécharger mon CV",
+    "MY_SEARCH": "Ma recherche"
+  },
+  "TYPEWRITER": [
+    "Développeur Web",
+    "Web Designer",
+    "Développeur Full-Stack",
+    "Créateur d'expériences digitales",
+    "Passionné d'innovation"
+  ],
+  "JOB_SEARCH": {
+    "AVAILABLE": "Disponible immédiatement",
+    "TITLE": "Recherche d'un CDI",
+    "SUBTITLE": "Je recherche activement une entreprise pour un CDI en développement web. Mobile dans toute la France, je suis prêt à m'investir pleinement dans votre équipe.",
+    "GOAL_TITLE": "Objectif Professionnel",
+    "GOAL_DESC": "Intégrer une équipe de développement en CDI pour mettre mes compétences au service de projets ambitieux et contribuer durablement à la croissance de l'entreprise.",
+    "MOBILITY_TITLE": "Mobilité Géographique",
+    "MOBILITY_DESC": "Totalement mobile sur l'ensemble du territoire français. Prêt à déménager pour la bonne opportunité et à m'adapter aux contraintes géographiques de l'entreprise.",
+    "AVAILABILITY_TITLE": "Disponibilité",
+    "AVAILABILITY_DESC": "Disponible immédiatement pour un CDI à plein temps. Flexible sur les conditions selon les besoins de l'entreprise.",
+    "MOTIVATION_TITLE": "Apports & Motivation",
+    "MOTIVATION_DESC": "Passionné, curieux et motivé, j'apporte une perspective fraîche, une grande capacité d'apprentissage et l'envie de contribuer activement aux succès de l'équipe.",
+    "CTA_TEXT": "Votre entreprise recherche un développeur motivé ? Discutons de cette opportunité !",
+    "CONTACT_ME": "Me contacter",
+    "MY_CV": "Mon CV détaillé"
+  },
+  "ABOUT": {
+    "TITLE": "À Propos",
+    "PARA1": "Développeur fullstack passionné, je crée des expériences web remarquables en alliant créativité et expertise technique. Mon approche combine innovation et qualité pour donner vie à vos projets digitaux.",
+    "PARA2": "Actuellement à la recherche d'un CDI, je souhaite intégrer une équipe dynamique pour contribuer pleinement à des projets ambitieux en apportant mes compétences et mon expertise technique.",
+    "PARA3": "Autonome, rigoureux et toujours à l'affût des dernières innovations, j'aime relever des défis techniques complexes. Ma mobilité sur toute la France me permet de saisir les meilleures opportunités de formation et de développement professionnel.",
+    "TAB_SKILLS": "Compétences",
+    "TAB_EDUCATION": "Formation",
+    "TAB_SOFT": "Soft Skills",
+    "LANGUAGES": "Langues",
+    "LANG_FR": "Français (Langue maternelle)",
+    "LANG_EN": "Anglais (Niveau professionnel)",
+    "LANG_ES": "Espagnol (Notions)",
+    "SOFT_HUMAN": "Qualités Humaines",
+    "SOFT_TEAMWORK": "Travail d'équipe",
+    "SOFT_ANALYTICAL": "Esprit analytique",
+    "SOFT_MOTIVATION": "Motivation",
+    "SOFT_ADAPTABILITY": "Adaptabilité",
+    "SOFT_MOBILITY": "Mobilité",
+    "SOFT_SPEED": "Rapidité",
+    "SOFT_LEARNING": "Apprentissage",
+    "SOFT_PRO": "Aptitudes Pro",
+    "SOFT_COMMUNICATION": "Communication",
+    "SOFT_PROBLEM_SOLVING": "Résolution",
+    "SOFT_CREATIVITY": "Créativité"
+  },
+  "SERVICES": {
+    "TITLE": "Services",
+    "WHY_ME": "Pourquoi me choisir ?",
+    "INTRO1": "Je place votre réussite au cœur de chaque projet. Mon approche collaborative garantit que vos besoins sont parfaitement compris et réalisés.",
+    "INTRO2": "En recherche d'un CDI, j'apporte une expertise technique solide, une grande motivation et l'envie de m'impliquer durablement dans vos projets.",
+    "INTRO3": "Ma mobilité géographique me permet de m'adapter parfaitement aux besoins de votre entreprise, où qu'elle soit située en France."
+  },
+  "PROJECTS": {
+    "TITLE": "Mes Réalisations",
+    "SUBTITLE": "Découvrez quelques-uns de mes projets récents qui démontrent mes compétences et ma motivation",
+    "VIEW_PROJECT": "Voir le projet"
+  },
+  "GALLERY": {
+    "TITLE": "Galerie",
+    "SUBTITLE": "Un aperçu visuel de mes certifications et recommandations",
+    "VIEW": "Voir"
+  },
+  "TESTIMONIALS": {
+    "TITLE": "Témoignages",
+    "SUBTITLE": "Ce que disent ceux qui ont travaillé avec moi"
+  },
+  "CONTACT": {
+    "TITLE": "Contactez-moi",
+    "SUBTITLE": "Vous recherchez un développeur motivé pour un CDI ?",
+    "SPEECH": "N'hésitez pas à me contacter pour discuter de vos besoins et de mes disponibilités.",
+    "PHONE": "Téléphone",
+    "EMAIL": "Email",
+    "FORM_NAME": "Votre nom",
+    "FORM_NAME_LABEL": "Nom",
+    "FORM_EMAIL": "Votre email",
+    "FORM_EMAIL_LABEL": "Email",
+    "FORM_SUBJECT": "Objet de votre message",
+    "FORM_SUBJECT_LABEL": "Objet",
+    "FORM_MESSAGE": "Votre message",
+    "FORM_MESSAGE_LABEL": "Message",
+    "SEND": "Envoyer",
+    "ERROR_NAME_REQUIRED": "Le nom est requis",
+    "ERROR_EMAIL_REQUIRED": "L'email est requis",
+    "ERROR_EMAIL_INVALID": "Email invalide",
+    "ERROR_MESSAGE_REQUIRED": "Le message est requis",
+    "ERROR_MESSAGE_MIN": "Le message doit contenir au moins 15 caractères"
+  },
+  "LANG": {
+    "SWITCH_TO": "EN",
+    "CURRENT": "FR"
+  }
+}

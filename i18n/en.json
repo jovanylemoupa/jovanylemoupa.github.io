@@ -1,0 +1,123 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "SERVICES": "Services",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact me",
+    "GALLERY": "Gallery",
+    "TESTIMONIALS": "Testimonials"
+  },
+  "MOBILE_NAV": {
+    "HOME": "Home",
+    "SEARCH": "Job Search",
+    "ABOUT": "About",
+    "SERVICES": "Services",
+    "PROJECTS": "Projects",
+    "GALLERY": "Gallery",
+    "TESTIMONIALS": "Testimonials",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "GREETING": "Hi, my name is",
+    "I_AM": "I am",
+    "DESCRIPTION": "I design and develop innovative web solutions that transform your ideas into exceptional digital experiences. Currently looking for a full-time position.",
+    "DOWNLOAD_CV": "Download CV",
+    "DOWNLOAD_CV_ARIA": "Download my CV",
+    "MY_SEARCH": "My search"
+  },
+  "TYPEWRITER": [
+    "Web Developer",
+    "Web Designer",
+    "Full-Stack Developer",
+    "Digital Experience Creator",
+    "Innovation Enthusiast"
+  ],
+  "JOB_SEARCH": {
+    "AVAILABLE": "Available immediately",
+    "TITLE": "Looking for a Full-Time Position",
+    "SUBTITLE": "I am actively looking for a full-time position in web development. Mobile throughout France, I am ready to fully commit to your team.",
+    "GOAL_TITLE": "Professional Goal",
+    "GOAL_DESC": "Join a development team full-time to put my skills at the service of ambitious projects and contribute sustainably to the company's growth.",
+    "MOBILITY_TITLE": "Geographic Mobility",
+    "MOBILITY_DESC": "Fully mobile throughout France. Ready to relocate for the right opportunity and to adapt to the company's geographic constraints.",
+    "AVAILABILITY_TITLE": "Availability",
+    "AVAILABILITY_DESC": "Available immediately for a full-time position. Flexible on conditions depending on the company's needs.",
+    "MOTIVATION_TITLE": "Contributions & Motivation",
+    "MOTIVATION_DESC": "Passionate, curious and motivated, I bring a fresh perspective, a great learning capacity and the desire to actively contribute to the team's success.",
+    "CTA_TEXT": "Is your company looking for a motivated developer? Let's discuss this opportunity!",
+    "CONTACT_ME": "Contact me",
+    "MY_CV": "My detailed CV"
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "PARA1": "Passionate fullstack developer, I create remarkable web experiences by combining creativity and technical expertise. My approach combines innovation and quality to bring your digital projects to life.",
+    "PARA2": "Currently looking for a full-time position, I wish to join a dynamic team to fully contribute to ambitious projects by bringing my skills and technical expertise.",
+    "PARA3": "Autonomous, rigorous and always on the lookout for the latest innovations, I enjoy tackling complex technical challenges. My mobility throughout France allows me to seize the best training and professional development opportunities.",
+    "TAB_SKILLS": "Skills",
+    "TAB_EDUCATION": "Education",
+    "TAB_SOFT": "Soft Skills",
+    "LANGUAGES": "Languages",
+    "LANG_FR": "French (Native language)",
+    "LANG_EN": "English (Professional level)",
+    "LANG_ES": "Spanish (Basic)",
+    "SOFT_HUMAN": "Human Qualities",
+    "SOFT_TEAMWORK": "Teamwork",
+    "SOFT_ANALYTICAL": "Analytical thinking",
+    "SOFT_MOTIVATION": "Motivation",
+    "SOFT_ADAPTABILITY": "Adaptability",
+    "SOFT_MOBILITY": "Mobility",
+    "SOFT_SPEED": "Speed",
+    "SOFT_LEARNING": "Learning",
+    "SOFT_PRO": "Pro Skills",
+    "SOFT_COMMUNICATION": "Communication",
+    "SOFT_PROBLEM_SOLVING": "Problem solving",
+    "SOFT_CREATIVITY": "Creativity"
+  },
+  "SERVICES": {
+    "TITLE": "Services",
+    "WHY_ME": "Why choose me?",
+    "INTRO1": "I put your success at the heart of every project. My collaborative approach ensures that your needs are perfectly understood and delivered.",
+    "INTRO2": "Looking for a full-time position, I bring solid technical expertise, great motivation and the desire to be durably involved in your projects.",
+    "INTRO3": "My geographic mobility allows me to perfectly adapt to your company's needs, wherever it is located in France."
+  },
+  "PROJECTS": {
+    "TITLE": "My Projects",
+    "SUBTITLE": "Discover some of my recent projects that demonstrate my skills and motivation",
+    "VIEW_PROJECT": "View project"
+  },
+  "GALLERY": {
+    "TITLE": "Gallery",
+    "SUBTITLE": "A visual overview of my certifications and recommendations",
+    "VIEW": "View"
+  },
+  "TESTIMONIALS": {
+    "TITLE": "Testimonials",
+    "SUBTITLE": "What those who have worked with me say"
+  },
+  "CONTACT": {
+    "TITLE": "Contact me",
+    "SUBTITLE": "Looking for a motivated developer for a full-time position?",
+    "SPEECH": "Feel free to contact me to discuss your needs and my availability.",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "FORM_NAME": "Your name",
+    "FORM_NAME_LABEL": "Name",
+    "FORM_EMAIL": "Your email",
+    "FORM_EMAIL_LABEL": "Email",
+    "FORM_SUBJECT": "Subject of your message",
+    "FORM_SUBJECT_LABEL": "Subject",
+    "FORM_MESSAGE": "Your message",
+    "FORM_MESSAGE_LABEL": "Message",
+    "SEND": "Send",
+    "ERROR_NAME_REQUIRED": "Name is required",
+    "ERROR_EMAIL_REQUIRED": "Email is required",
+    "ERROR_EMAIL_INVALID": "Invalid email",
+    "ERROR_MESSAGE_REQUIRED": "Message is required",
+    "ERROR_MESSAGE_MIN": "Message must contain at least 15 characters"
+  },
+  "LANG": {
+    "SWITCH_TO": "FR",
+    "CURRENT": "EN"
+  }
+}
