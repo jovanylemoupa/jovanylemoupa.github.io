@@ -386,14 +386,12 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
    * 🚀 Initialisation du service email Angular 19 amélioré
    */
   private async initEmailServiceAngular19(): Promise<void> {
-    console.log('🚀 Initialisation service email Angular 19...');
 
     try {
       // Test de connectivité avec timeout
       const connectivityTest = await this.testEmailConnectivityAsync();
 
       if (connectivityTest.success) {
-        console.log('✅ Service email Angular 19 initialisé');
         this.emailServiceReady.set(true);
 
         // Retry automatique intelligent
@@ -402,11 +400,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         // Mise à jour du compteur
         this.updatePendingEmailsCount();
       } else {
-        console.warn('⚠️ Service email partiellement fonctionnel');
         this.emailServiceReady.set(true); // Permet quand même l'utilisation
       }
     } catch (error) {
-      console.error('❌ Erreur initialisation service email:', error);
       this.emailServiceReady.set(false);
     }
   }
@@ -420,13 +416,11 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
       window.addEventListener('online', () => {
         this.isOnline.set(true);
-        console.log('🌐 Connexion rétablie');
         this.retryFailedEmailsWhenOnline();
       });
 
       window.addEventListener('offline', () => {
         this.isOnline.set(false);
-        console.log('📵 Connexion perdue');
       });
     }
   }
@@ -448,7 +442,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   private initPerformanceMonitoring(): void {
     // Observer les Core Web Vitals
     if ('web-vitals' in window) {
-      console.log('📊 Monitoring des performances activé');
     }
 
     // Mesurer le temps de réponse des emails
@@ -474,7 +467,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       this.mailService.testConnectivity().subscribe({
         next: (result: any) => {
           const responseTime = performance.now() - startTime;
-          console.log(`🔍 Test connectivité: ${responseTime.toFixed(2)}ms`);
 
           resolve({
             success: true,
@@ -483,7 +475,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
           });
         },
         error: (error: any) => {
-          console.warn('⚠️ Test connectivité échoué:', error);
           resolve({
             success: false,
             error,
@@ -504,7 +495,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         this.mailService.retryFailedEmails().subscribe({
           next: (result: any) => {
             if (result && result.success === 'true') {
-              console.log('✅ Retry intelligent réussi');
               this.emailMetrics.retryAttempts++;
               this.updateEmailSuccessRate();
               this.updatePendingEmailsCount();
@@ -519,10 +509,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
           },
           error: (error: any) => {
             if (attempt < 3) {
-              console.log(`🔄 Retry ${attempt + 1}/3 dans ${delay}ms`);
               retryWithBackoff(attempt + 1);
             } else {
-              console.log('❌ Abandon après 3 tentatives');
             }
           },
         });
@@ -562,7 +550,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       this.pendingEmailsCount.set(savedEmails.length);
 
       if (savedEmails.length > 0) {
-        console.log(`💾 ${savedEmails.length} email(s) en attente Angular 19`);
       }
     } catch (e) {
       this.pendingEmailsCount.set(0);
@@ -699,15 +686,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   showProject(param: string) {
-    console.log('🔍 Param reçu :', param);
-    console.log('📋 Liste des projets :', this.projectList);
-    console.log(
-      '🔍 Codes des projets :',
-      this.projectList.map((p) => p.projectCode)
-    );
 
     const projectData = this.projectsService.getProjectData(param);
-    console.log('📦 Données du projet récupérées :', projectData);
 
     if (typeof projectData !== 'undefined') {
       this.ref = this.dialogService.open(ProjectDetailComponent, {
@@ -720,7 +700,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         contentStyle: { 'max-height': '90vh', overflow: 'auto' },
       });
     } else {
-      console.error('❌ Aucune donnée trouvée pour le projet:', param);
       this.messageService.add({
         severity: 'warn',
         detail: this.config.messages.projectError,
@@ -738,7 +717,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ) as HTMLElement;
 
     if (!typewriterElement) {
-      console.warn('Element #typewriter not found');
       return;
     }
 
@@ -926,10 +904,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         : 'Unknown',
     };
 
-    console.log('📧 Envoi formulaire Angular 19...');
-    console.log('📱 Device:', this.getAdvancedDeviceInfo());
-    console.log('🌐 Connexion:', this.isOnline() ? 'En ligne' : 'Hors ligne');
-
     this.mailService
       .sendMail(JSON.stringify(formDataWithContext))
       .pipe(
@@ -937,12 +911,10 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
           this.isContactFormSubmittedAndNotErrorOnClientSide = false;
           const responseTime = performance.now() - startTime;
           this.emailMetrics.avgResponseTime = responseTime;
-          console.log(`⏱️ Temps de traitement: ${responseTime.toFixed(2)}ms`);
         })
       )
       .subscribe({
         next: (resp: any) => {
-          console.log('✅ Réponse service Angular 19:', resp);
           this.emailMetrics.successfulSends++;
           this.lastEmailSentAt.set(new Date());
 
@@ -981,15 +953,11 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
             this.updatePendingEmailsCount();
             this.updateEmailSuccessRate();
 
-            console.log(
-              `✅ Email Angular 19: ${resp.method} depuis ${resp.device}`
-            );
           } else {
             throw new Error('Réponse inattendue du service Angular 19');
           }
         },
         error: (error: any) => {
-          console.error('❌ Erreur envoi Angular 19:', error);
           this.emailMetrics.failedSends++;
           this.emailMetrics.lastErrorType = error.message || 'Erreur inconnue';
 
@@ -1020,11 +988,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       test_mode: true,
     };
 
-    console.log('🧪 Test service Angular 19...');
-
     this.mailService.sendMailTest(JSON.stringify(testData)).subscribe({
       next: (result: any) => {
-        console.log('✅ Test Angular 19 réussi:', result);
         this.messageService.add({
           severity: 'info',
           summary: '🧪 Test réussi',
@@ -1035,7 +1000,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         });
       },
       error: (error: any) => {
-        console.error('❌ Test Angular 19 échoué:', error);
         this.messageService.add({
           severity: 'error',
           summary: '❌ Test échoué',
@@ -1058,10 +1022,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       );
 
       if (savedEmails.length > 0) {
-        console.group('💾 EMAILS SAUVEGARDÉS ANGULAR 19');
-        console.table(savedEmails);
-        console.log('📊 Métriques:', this.emailMetrics);
-        console.groupEnd();
 
         this.messageService.add({
           severity: 'info',
@@ -1078,7 +1038,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         });
       }
     } catch (e) {
-      console.warn("Impossible d'accéder au localStorage Angular 19");
     }
   }
 
@@ -1088,16 +1047,11 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   forceRetryEmails(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    console.log('🔄 Retry manuel Angular 19...');
     const retryStartTime = performance.now();
 
     this.mailService.retryFailedEmails().subscribe({
       next: (result: any) => {
         const retryTime = performance.now() - retryStartTime;
-        console.log(
-          `🔄 Retry Angular 19 terminé en ${retryTime.toFixed(2)}ms:`,
-          result
-        );
 
         if (result && result.success === 'true') {
           this.emailMetrics.retryAttempts++;
@@ -1120,7 +1074,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         this.updateEmailSuccessRate();
       },
       error: (error: any) => {
-        console.error('❌ Retry Angular 19 échoué:', error);
         this.emailMetrics.failedSends++;
         this.messageService.add({
           severity: 'error',
@@ -1209,48 +1162,21 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       return;
     }
 
-    console.group('🔍 DIAGNOSTIC ANGULAR 19 COMPLET');
-
     // 🆕 Informations Angular 19
-    console.log('🅰️ Angular Version:', '19');
-    console.log('📱 Device Info:', this.getAdvancedDeviceInfo());
-    console.log('🌐 Connexion:', this.isOnline() ? 'En ligne' : 'Hors ligne');
-    console.log('📶 Type connexion:', this.getConnectionType());
-    console.log('🔒 HTTPS:', location.protocol === 'https:');
-    console.log('📍 URL:', window.location.href);
-    console.log('🎯 User Agent:', navigator.userAgent);
 
     // 🆕 Métriques emails
-    console.log('📧 Métriques emails:', this.emailMetrics);
-    console.log('📊 Taux de succès:', this.emailSuccessRate() + '%');
-    console.log('📬 Emails en attente:', this.pendingEmailsCount());
-    console.log('🕐 Dernier envoi:', this.lastEmailSentAt());
 
     // 🆕 Performance
-    console.log('⚡ Performance:', {
-      memory: (performance as any).memory
-        ? (performance as any).memory.usedJSHeapSize
-        : 'Non disponible',
-      timing:
-        performance.timing.loadEventEnd -
-        performance.timing.navigationStart +
-        'ms',
-    });
 
     // LocalStorage Angular 19
     try {
       const savedEmails = JSON.parse(
         localStorage.getItem('angular19_portfolio_emails') || '[]'
       );
-      console.log('💾 Emails sauvegardés Angular 19:', savedEmails.length);
       if (savedEmails.length > 0) {
-        console.table(savedEmails);
       }
     } catch (e) {
-      console.warn('❌ localStorage Angular 19 non accessible');
     }
-
-    console.groupEnd();
 
     this.messageService.add({
       severity: 'info',

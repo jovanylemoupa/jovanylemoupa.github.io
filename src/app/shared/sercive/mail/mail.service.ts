@@ -48,12 +48,7 @@ export class MailService {
         },
       });
 
-      console.log('🎉 EmailJS initialisé avec Angular 19 !');
-      console.log('🔑 Public Key:', this.EMAILJS_CONFIG.PUBLIC_KEY);
-      console.log('🎯 Service ID:', this.EMAILJS_CONFIG.SERVICE_ID);
-      console.log('📝 Template ID:', this.EMAILJS_CONFIG.TEMPLATE_ID);
     } catch (error) {
-      console.error('❌ Échec initialisation EmailJS:', error);
     }
   }
 
@@ -68,13 +63,9 @@ export class MailService {
     const data = JSON.parse(mailInfo);
     const deviceInfo = this.detectDevice();
 
-    console.log(`📧 [${deviceInfo.type}] Envoi EmailJS Angular 19...`);
-    console.log('📋 Données:', data);
-
     return this.sendViaEmailJS(data).pipe(
       retry({ count: 2, delay: 3000 }), // Angular 19 retry amélioré
       catchError((error) => {
-        console.error('❌ EmailJS final échec:', error);
         return this.emergencyBackup(data);
       })
     );
@@ -96,8 +87,6 @@ export class MailService {
       angular_version: '19', // Info debug
     };
 
-    console.log('📤 Envoi EmailJS avec params:', templateParams);
-
     return from(
       emailjs.send(
         this.EMAILJS_CONFIG.SERVICE_ID,
@@ -110,7 +99,6 @@ export class MailService {
     ).pipe(
       timeout(20000), // 20 secondes Angular 19
       map((response: EmailJSResponseStatus) => {
-        console.log('🎉 ✅ EmailJS SUCCÈS Angular 19 !', response);
         return {
           success: true,
           method: 'EmailJS',
@@ -121,7 +109,6 @@ export class MailService {
         };
       }),
       catchError((error: any) => {
-        console.error('❌ Erreur EmailJS détaillée:', error);
 
         // Messages d'erreur spécifiques Angular 19
         let errorMessage = 'Erreur EmailJS inconnue';
@@ -166,23 +153,11 @@ export class MailService {
         const existing = JSON.parse(localStorage.getItem(key) || '[]');
         existing.push(backupData);
         localStorage.setItem(key, JSON.stringify(existing));
-        console.log('💾 Sauvegarde Angular 19 réussie');
       } catch (e) {
-        console.warn('❌ localStorage indisponible:', e);
       }
     }
 
     // Console log pour debug
-    console.group('🚨 BACKUP EMAIL ANGULAR 19');
-    console.log('📧 Destinataire:', this.TARGET_EMAIL);
-    console.log('👤 Expéditeur:', `${data.name} <${data.email}>`);
-    console.log('📋 Sujet:', data.subject);
-    console.log('💬 Message:', data.message);
-    console.log('📱 Device:', deviceInfo.type);
-    console.log('🕐 Timestamp:', timestamp);
-    console.log('🌐 URL:', window.location.href);
-    console.log('🔧 Angular:', '19');
-    console.groupEnd();
 
     return of({
       success: true,
@@ -228,16 +203,7 @@ export class MailService {
    */
   testConnectivity(): Observable<any> {
     /**
-    console.group('🔍 DIAGNOSTIC ANGULAR 19 + EMAILJS');
-    console.log('🅰️ Angular Version:', '19');
-    console.log('🌐 Browser Support:', this.isBrowser);
-    console.log('📧 EmailJS Ready:', typeof emailjs !== 'undefined');
-    console.log('🔑 Public Key:', this.EMAILJS_CONFIG.PUBLIC_KEY);
-    console.log('🎯 Service ID:', this.EMAILJS_CONFIG.SERVICE_ID);
-    console.log('📝 Template ID:', this.EMAILJS_CONFIG.TEMPLATE_ID);
-    console.log('📱 Device:', this.detectDevice());
-    console.log('📧 Target Email:', this.TARGET_EMAIL);
-    console.groupEnd(); **/
+**/
 
     return of({
       angular_version: '19',
@@ -259,10 +225,6 @@ export class MailService {
    */
   sendMailTest(mailInfo: string): Observable<any> {
     const data = JSON.parse(mailInfo);
-    console.log('🧪 MODE TEST ANGULAR 19');
-    console.log('📋 Test avec données:', data);
-    console.log('📧 Email cible:', this.TARGET_EMAIL);
-    console.log('🎯 Template ID:', this.EMAILJS_CONFIG.TEMPLATE_ID);
 
     return timer(1500).pipe(
       map(() => ({
@@ -281,10 +243,6 @@ export class MailService {
    
   sendMailTest(mailInfo: string): Observable<any> {
     const data = JSON.parse(mailInfo);
-    console.log('🧪 MODE TEST ANGULAR 19');
-    console.log('📋 Test avec données:', data);
-    console.log('📧 Email cible:', this.TARGET_EMAIL);
-    console.log('🎯 Template ID:', this.EMAILJS_CONFIG.TEMPLATE_ID);
 
     return timer(1500).pipe(
       map(() => ({
@@ -313,11 +271,8 @@ export class MailService {
       const savedEmails = JSON.parse(localStorage.getItem(key) || '[]');
 
       if (savedEmails.length === 0) {
-        console.log('📧 Aucun email Angular 19 à retry');
         return of([]);
       }
-
-      console.log(`🔄 Retry ${savedEmails.length} emails Angular 19...`);
 
       // Retry du premier email
       const emailToRetry = savedEmails[0];
@@ -327,17 +282,14 @@ export class MailService {
           if (result.success) {
             savedEmails.shift(); // Retirer l'email réussi
             localStorage.setItem(key, JSON.stringify(savedEmails));
-            console.log('✅ Email Angular 19 retry réussi !');
           }
           return [result];
         }),
         catchError((error) => {
-          console.log('❌ Retry Angular 19 échoué:', error);
           return of([{ success: false, error: error.message }]);
         })
       );
     } catch (e) {
-      console.error('❌ Erreur retry Angular 19:', e);
       return of([]);
     }
   }

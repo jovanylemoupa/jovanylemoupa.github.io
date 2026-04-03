@@ -185,7 +185,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   /**
    * Gestion du scroll de la fenêtre
    */
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     if (!this.isBrowser || typeof window === 'undefined') return;
 
@@ -202,7 +202,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   /**
    * Gestion du redimensionnement de la fenêtre
    */
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize(): void {
     if (!this.isBrowser || typeof window === 'undefined') return;
 
@@ -344,7 +344,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.translateService.use(savedLang);
       }
     } catch (error) {
-      console.warn('localStorage not available');
       this.isBannerClosed = false;
     }
   }

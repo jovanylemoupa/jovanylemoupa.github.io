@@ -10,7 +10,7 @@ export const portfolioConfig = {
     phone: '+33 7 59 61 14 10',
     location: 'Grenoble, France',
     cvUrl:
-      'https://drive.google.com/file/d/1sX35FUqe9CEz6K9F7Pk_CmuixpxMHXt-/view?usp=sharing',
+      'https://drive.google.com/file/d/1npZBXy0uSlmocRsfO1HbTTSO-F9U9osc/view',
   },
 
   // Réseaux sociaux
@@ -239,6 +239,18 @@ export const portfolioConfig = {
       category: 'Certifications',
       image: 'img/Certifications/Certif-langchain.png',
       description: 'Certification LangChain — développement d\'applications IA avec LLMs',
+    },
+    {
+      title: 'LangChain Intro',
+      category: 'Certifications',
+      image: 'img/Certifications/langchain-intro.png',
+      description: 'Introduction à LangChain — bases du développement IA avec LLMs',
+    },
+    {
+      title: 'LangSmith',
+      category: 'Certifications',
+      image: 'img/Certifications/langSmith.png',
+      description: 'Certification LangSmith — observabilité et débogage d\'applications LLM',
     },
     {
       title: 'Recommandation LinkedIn',

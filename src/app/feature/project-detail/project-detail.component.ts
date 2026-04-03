@@ -25,7 +25,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     this.getProjectData();
 
     // Debug des données reçues
-    console.log('🎭 ProjectDetailComponent - Données reçues:', this.project);
 
     // Désactiver l'auto-focus du dialog pour éviter les conflits
     setTimeout(() => {
@@ -51,7 +50,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     this.project = this.config.data?.projectData;
 
     if (!this.project) {
-      console.error('❌ Aucune donnée de projet reçue');
       return;
     }
 
@@ -67,13 +65,11 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 
     // Si c'est l'ancienne structure (from projectsService.getProjectData), on garde tel quel
     if (this.project.who || this.project.why || this.project.requirements) {
-      console.log('📄 Utilisation structure complète (legacy)');
       return;
     }
 
     // Si c'est la nouvelle structure (from initProjectsListBriefData), on adapte
     if (this.project.projectTitle || this.project.description) {
-      console.log('🆕 Adaptation vers structure legacy');
 
       const adapted = {
         code: this.project.projectCode,
@@ -128,7 +124,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       };
 
       this.project = adapted;
-      console.log('✅ Structure adaptée:', this.project);
     }
   }
 
@@ -138,10 +133,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    */
   goOnSscovidWebsite(link: string) {
     if (link) {
-      console.log('🔗 Ouverture du lien:', link);
       window.open(link, '_blank', 'noopener,noreferrer');
     } else {
-      console.warn('⚠️ Aucun lien disponible pour ce projet');
     }
   }
 
@@ -149,7 +142,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    * Ferme le dialog
    */
   closeDialog(): void {
-    console.log('🔚 Fermeture du modal projet');
     this.ref.close();
   }
 
@@ -305,7 +297,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    * 🆕 Gestion d'erreur pour les images
    */
   onImageError(event: any) {
-    console.warn('⚠️ Erreur chargement image:', event.target.src);
     event.target.src = 'img/default-project.png';
   }
 
@@ -313,12 +304,5 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    * 🆕 Debug du projet (à supprimer en production)
    */
   debugProject() {
-    console.group('🔍 DEBUG PROJET');
-    console.log('Données brutes:', this.project);
-    console.log('A des technologies:', this.hasTechnologies());
-    console.log('A des exigences:', this.hasRequirements());
-    console.log('Peut être visité:', this.canVisitProject());
-    console.log('État formaté:', this.getFormattedEstate(this.project?.estate));
-    console.groupEnd();
   }
 }

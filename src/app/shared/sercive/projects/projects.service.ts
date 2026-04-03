@@ -748,29 +748,17 @@ export class ProjectsService {
 
   // ✅ Méthode corrigée avec logs de debug
   getProjectData(param: string) {
-    console.log('🔍 getProjectData appelée avec:', param);
 
     let projectData: any;
     let projectsListAllData = this.initProjectData();
 
-    console.log(
-      '📋 Projets disponibles:',
-      projectsListAllData.map((p) => p.code)
-    );
-
     projectsListAllData.forEach((project) => {
       if (project.code == param) {
         projectData = project;
-        console.log('✅ Projet trouvé:', project.code);
       }
     });
 
     if (!projectData) {
-      console.error('❌ Aucun projet trouvé pour le code:', param);
-      console.log(
-        '💡 Codes disponibles:',
-        projectsListAllData.map((p) => p.code)
-      );
     }
 
     return projectData;
